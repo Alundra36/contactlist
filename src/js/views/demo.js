@@ -12,23 +12,17 @@ export class Demo extends React.Component {
 				<ul className="list-group">
 					<Context.Consumer>
 						{({ store, actions }) => {
-							return store.demo.map((item, index) => {
+							return store.listcontact.map((item, index) => {
+								console.log(item, "item");
 								return (
-									<li
-										key={index}
-										className="list-group-item d-flex justify-content-between"
-										style={{ background: item.background }}>
+									<li key={index} className="list-group-item d-flex justify-content-between">
 										<Link to={"/single/" + index}>
 											<span>Link to: {item.title}</span>
 										</Link>
 										<p style={{ color: item.initial }}>
 											{"Check store/store.js scroll to the actions to see the code "}
 										</p>
-										<button
-											className="btn btn-success"
-											onClick={() => actions.changeColor(index, "orange")}>
-											Change Color
-										</button>
+										<button className="btn btn-success">Edit</button>
 									</li>
 								);
 							});

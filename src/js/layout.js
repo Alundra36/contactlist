@@ -6,6 +6,7 @@ import injectContext from "./store/appContext";
 
 import Contacts from "./views/Contacts.js";
 import AddContact from "./views/AddContact.js";
+import { Demo } from "./views/demo.js";
 
 export class Layout extends React.Component {
 	render() {
@@ -16,6 +17,7 @@ export class Layout extends React.Component {
 						<Switch>
 							<Route exact path="/index.html" component={Contacts} />
 							<Route exact path="/" component={Contacts} />
+							<Route exact path="/demo" component={Demo} />
 							<Route exact path="/contacts" component={Contacts} />
 							<Route exact path="/add" component={AddContact} />
 							<Route exact path="/edit" component={AddContact} />
